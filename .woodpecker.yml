@@ -7,4 +7,4 @@ steps:
     commands:
       - npm ci
       - VITE_APP_USE_LOCALDATA=true npm run build
-      - output_dir="/root/Packages/vue-quiz-app/${CI_COMMIT_SHA}"; mkdir -p "${output_dir}"; tar -czf "${output_dir}/dist.tar.gz" -C dist .; sha256sum "${output_dir}/dist.tar.gz" > "${output_dir}/dist.tar.gz.sha256"; printf '{"app":"vue-quiz-app","commit":"%s","artifact":"dist.tar.gz"}' "${CI_COMMIT_SHA}" > "${output_dir}/artifact-manifest.json"
+      - mkdir -p "/root/Packages/vue-quiz-app/${CI_COMMIT_SHA}"; tar -czf "/root/Packages/vue-quiz-app/${CI_COMMIT_SHA}/dist.tar.gz" -C dist .; sha256sum "/root/Packages/vue-quiz-app/${CI_COMMIT_SHA}/dist.tar.gz" > "/root/Packages/vue-quiz-app/${CI_COMMIT_SHA}/dist.tar.gz.sha256"; printf '{"app":"vue-quiz-app","commit":"%s","artifact":"dist.tar.gz"}' "${CI_COMMIT_SHA}" > "/root/Packages/vue-quiz-app/${CI_COMMIT_SHA}/artifact-manifest.json"
