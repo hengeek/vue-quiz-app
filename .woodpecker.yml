@@ -1,5 +1,5 @@
 when:
-  event: manual
+  event: push
 
 steps:
   - name: build-and-package
